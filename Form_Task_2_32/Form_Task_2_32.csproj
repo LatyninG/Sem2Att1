@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{575C7874-CA57-40C3-BB30-72E79AA88D12}</ProjectGuid>
+    <ProjectGuid>{ECFF9359-B62B-43A1-9053-E5E568A83AE9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Atta_1</RootNamespace>
-    <AssemblyName>Atta_1</AssemblyName>
+    <RootNamespace>Form_Task_2_32</RootNamespace>
+    <AssemblyName>Form_Task_2_32</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

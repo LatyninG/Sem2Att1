@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{575C7874-CA57-40C3-BB30-72E79AA88D12}</ProjectGuid>
+    <ProjectGuid>{89F1B167-961E-419E-B7C6-33714B100115}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Atta_1</RootNamespace>
-    <AssemblyName>Atta_1</AssemblyName>
+    <RootNamespace>Form_Task_4_32</RootNamespace>
+    <AssemblyName>Form_Task_4_32</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -82,6 +82,10 @@
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{9f466e23-66ba-41e9-867a-0139ecd0364a}</Project>
       <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataGridView_Logic\DataGridView_Logic.csproj">
+      <Project>{2e1cefce-c151-4835-ba6e-940325ae5e84}</Project>
+      <Name>DataGridView_Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
