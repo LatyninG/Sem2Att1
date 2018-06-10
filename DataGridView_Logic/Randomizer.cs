@@ -16,7 +16,7 @@ namespace DataGridView_Logic
         {
             List<BL_Student> spisok = new List<BL_Student>();
             int sq = 10, r_kurs, r_group; // sq - количество студентов
-            double[] values;
+            List<double> values;
             double sredball;
             DateTime date;
             string r_fio;
@@ -58,18 +58,20 @@ namespace DataGridView_Logic
             return r_kurs;
         }
 
-        public double[] Values(int n)
+        public List<double> Values(int n)
         {
-            double[] values = new double[n * 2];
+            List<double> values = new List<double>();
+            double per;
             for (int j = 0; j < n * 2; j++)
             {
-                values[j] = rm.NextDouble() * (5 - 3) + 3;
-                values[j] = Math.Round(values[j], 2);
+                per = rm.NextDouble() * (5 - 3) + 3;
+                per = Math.Round(per, 2);
+                values.Add(per);
             }
             return values; 
         }
 
-        public double SredBall(double[] arr, int n)
+        public double SredBall(List<double> arr, int n)
         {
             double sum = 0;
             for (int j = 0; j < n * 2; j++)

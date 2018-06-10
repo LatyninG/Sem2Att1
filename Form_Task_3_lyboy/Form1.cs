@@ -39,9 +39,9 @@ namespace Form_Task_3_lyboy
         {
             Binary_Recording br = new Binary_Recording(Directory.GetCurrentDirectory() + "/Students.bin");
             List<BL_Student> student = br.Read();
-            Task3 task3 = new Task3();
-            int top = task3.Best_group(student);
-            List<BL_Student> up_student = task3.BGL(student, top);
+            Task3 task3 = new Task3(student);
+            int top = task3.Best_group();
+            List<BL_Student> up_student = task3.BGL(top);
             FillDgv<BL_Student>(up_student, dataGridView1);
         }
 

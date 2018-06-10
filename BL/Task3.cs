@@ -8,75 +8,47 @@ namespace BL
 {
     public class Task3
     {
-
-        public int Best_group(List<BL_Student> st)
+        public List<BL_Student> St { get; private set; }
+        public Task3 (List<BL_Student> st)
         {
-            int group;
-            double sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0;
-            for (int i = 0; i < st.Count; i++)
-            {
-                group = st[i].Group;
-                if (group == 1)
-                {
-                    sum1 += st[i].Sred_ball;
-                    count1++;
-                }
-                else if (group == 2)
-                {
-                    sum2 += st[i].Sred_ball;
-                    count2++;
-                }
-                else if (group == 3)
-                {
-                    sum3 += st[i].Sred_ball;
-                    count3++;
-                }
-                else if (group == 4)
-                {
-                    sum4 += st[i].Sred_ball;
-                    count4++;
-                }
-                else if (group == 5)
-                {
-                    sum5 += st[i].Sred_ball;
-                    count5++;
-                }
-            }
-            if( (sum1/count1 >= sum2/count2) && (sum1/count1 >= sum3/count3) && (sum1 / count1 >= sum4 / count4) && (sum1 / count1 >= sum5 / count5) )
-            {
-                group = 1;
-                return group;
-            }
-            if ((sum2 / count2 > sum1 / count1) && (sum2 / count2 >= sum3 / count3) && (sum2 / count2 >= sum4 / count4) && (sum2 / count2 >= sum5 / count5) )
-            {
-                group = 2;
-                return group;
-            }
-            if ((sum3 / count3 > sum1 / count1) && (sum3 / count3 > sum2 / count2) && (sum3 / count3 >= sum4 / count4) && (sum3 / count3 >= sum5 / count5) )
-            {
-                group = 3;
-                return group;
-            }
-            if ((sum4 / count4 > sum1 / count1) && (sum4 / count4 > sum2 / count2) && (sum4 / count4 > sum3 / count3) && (sum4 / count4 >= sum5 / count5) )
-            {
-                group = 4;
-                return group;
-            }
-            else
-            {
-                group = 5;
-                return group;
-            }
+            this.St = st;
         }
 
-        public List<BL_Student> BGL (List<BL_Student> bl, int group)
+        public int Best_group()
+        {
+            int max_group = St[0].Group;
+            for (int i = 0; i < St.Count; i++)
+            {
+                if (St[i].Group > max_group)
+                    max_group = St[i].Group;
+            }
+            double[] sum = new double[max_group];
+            int[] counter = new int[max_group];
+            for (int i = 0; i < St.Count; i++)
+            {
+                sum[St[i].Group-1] += St[i].Sred_ball;
+                counter[St[i].Group-1]++;
+            }
+            for (int i = 0; i < max_group; i++)
+            {
+                if (counter[i] != 0)
+                    sum[i] /= counter[i];
+                else
+                    sum[i] = 0;
+            }
+            double max_element = sum.Max();
+            int group = Array.IndexOf(sum, max_element) + 1;
+            return group;
+        }
+
+        public List<BL_Student> BGL (int group)
         {
             List<BL_Student> bgl = new List<BL_Student>();
-            for (int i = 0; i < bl.Count; i++)
+            for (int i = 0; i < St.Count; i++)
             {
-                if (bl[i].Group == group)
+                if (St[i].Group == group)
                 {
-                    BL_Student p = bl[i];
+                    BL_Student p = St[i];
                     bgl.Add(p);
                 }
             }
