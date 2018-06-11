@@ -15,6 +15,8 @@ namespace Form_Task_3_lyboy
 {
     public partial class Form1 : Form
     {
+        /* Поиск лучшей группы на основе Среднего балла и в последствии вывод учеников данной группы в итоговую таблицу*/
+
         public Form1()
         {
             InitializeComponent();
